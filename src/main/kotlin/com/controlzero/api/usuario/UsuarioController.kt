@@ -3,6 +3,7 @@ package com.controlzero.api.usuario
 import com.controlzero.api.usuario.dto.UsuarioRequest
 import com.controlzero.api.usuario.dto.UsuarioResponse
 import com.controlzero.api.usuario.dto.UsuarioUpdateRequest
+import io.swagger.v3.oas.annotations.security.SecurityRequirement
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/v1/usuarios")
+@SecurityRequirement(name = "bearerAuth")
 class UsuarioController(
     private val usuarioService: UsuarioService
 ) {

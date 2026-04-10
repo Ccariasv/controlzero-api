@@ -2,6 +2,7 @@ package com.controlzero.api.rol
 
 import com.controlzero.api.rol.dto.RolRequest
 import com.controlzero.api.rol.dto.RolResponse
+import io.swagger.v3.oas.annotations.security.SecurityRequirement
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/v1/roles")
+@SecurityRequirement(name = "bearerAuth")
 class RolController(
     private val rolService: RolService
 ) {

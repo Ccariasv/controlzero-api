@@ -6,6 +6,7 @@ import com.controlzero.api.empleado.dto.EmpleadoRequest
 import com.controlzero.api.empleado.dto.EmpleadoResponse
 import com.controlzero.api.empleado.dto.EstadoEmpleadoRequest
 import com.controlzero.api.empleado.dto.EstadoEmpleadoResponse
+import io.swagger.v3.oas.annotations.security.SecurityRequirement
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/v1/empleados")
+@SecurityRequirement(name = "bearerAuth")
 class EmpleadoController(
     private val empleadoService: EmpleadoService
 ) {

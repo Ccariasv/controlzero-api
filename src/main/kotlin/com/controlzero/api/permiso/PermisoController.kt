@@ -2,6 +2,7 @@ package com.controlzero.api.permiso
 
 import com.controlzero.api.permiso.dto.PermisoRequest
 import com.controlzero.api.permiso.dto.PermisoResponse
+import io.swagger.v3.oas.annotations.security.SecurityRequirement
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/v1/permisos")
+@SecurityRequirement(name = "bearerAuth")
 class PermisoController(
     private val permisoService: PermisoService
 ) {
